@@ -21,8 +21,8 @@ mongoose
   .then(() => console.log("Mongo Connected"))
   .catch(err => console.log(err));
 
-videoRoutes.route("/").get(function(req, res) {
-  Video.find(function(err, video) {
+videoRoutes.route("/").get((req, res) => {
+  Video.find((err, video) => {
     if (err) {
       console.log(err);
     } else {
@@ -31,7 +31,7 @@ videoRoutes.route("/").get(function(req, res) {
   });
 });
 
-videoRoutes.route("/add").post(function(req, res) {
+videoRoutes.route("/add").post((req, res) => {
   let video = new Video(req.body);
   video
     .save()
@@ -43,15 +43,15 @@ videoRoutes.route("/add").post(function(req, res) {
     });
 });
 
-videoRoutes.route("/:id").get(function(req, res) {
+videoRoutes.route("/:id").get((req, res) => {
   let id = req.params.id;
-  Video.findById(id, function(err, video) {
+  Video.findById(id, (err, video) => {
     res.json(video);
   });
 });
 
-videoRoutes.route("/update/:id").post(function(req, res) {
-  Video.findById(req.params.id, function(err, video) {
+videoRoutes.route("/update/:id").post((req, res) => {
+  Video.findById(req.params.id, (err, video) => {
     if (!video) res.status(404).send("data is not found");
     else video.video_description = req.body.video_description;
     video.video_responsible = req.body.video_responsible;
