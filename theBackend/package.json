@@ -6,16 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/KhanDoors/mern-video-catalog.git"
-  },
   "author": "Syyad Khan",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KhanDoors/mern-video-catalog/issues"
-  },
-  "homepage": "https://github.com/KhanDoors/mern-video-catalog#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
