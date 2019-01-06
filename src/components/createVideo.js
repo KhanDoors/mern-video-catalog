@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export class createVideo extends Component {
   state = {
@@ -34,6 +35,17 @@ export class createVideo extends Component {
     console.log(`Video Responsible: ${this.state.video_responsible}`);
     console.log(`Video Priority: ${this.state.video_priority}`);
     console.log(`Video Completed: ${this.state.video_completed}`);
+
+    const newVideo = {
+      video_description: this.state.video_description,
+      video_responsible: this.state.video_responsible,
+      video_priority: this.state.video_priority,
+      video_completed: this.state.video_completed
+    };
+
+    axios
+      .post("http://localhost:4000/videos/add", newVideo)
+      .then(res => console.log(res.data));
 
     this.setState({
       video_description: "",
