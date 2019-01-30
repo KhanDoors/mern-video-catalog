@@ -4,9 +4,15 @@ import axios from "axios";
 
 const Video = props => (
   <tr>
-    <td>{props.video.video_description}</td>
-    <td>{props.video.video_responsible}</td>
-    <td>{props.video.video_priority}</td>
+    <td className={props.video.video_completed ? "completed" : ""}>
+      {props.video.video_description}
+    </td>
+    <td className={props.video.video_completed ? "completed" : ""}>
+      {props.video.video_responsible}
+    </td>
+    <td className={props.video.video_completed ? "completed" : ""}>
+      {props.video.video_priority}
+    </td>
     <td>
       <Link to={"/edit/" + props.video._id}>Edit</Link>
     </td>
@@ -19,6 +25,17 @@ export class videoList extends Component {
   };
 
   componentDidMount = () => {
+    axios
+      .get("http://localhost:4000/videos/")
+      .then(res => {
+        this.setState({ videos: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  componentWillUpdate = () => {
     axios
       .get("http://localhost:4000/videos/")
       .then(res => {
