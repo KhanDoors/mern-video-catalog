@@ -8,3 +8,7 @@ body {
 .vidList {
   color: rgb(43, 107, 226);
 }
+
+.navbar-brand {
+  color: #81da1c;
+}

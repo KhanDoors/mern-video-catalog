@@ -21,7 +21,7 @@ class App extends Component {
             >
               <img src={logo} width="30" height="30" alt="Khandoors" />
             </a>
-            <Link to="/" className="navabr-brand">
+            <Link to="/" className="navbar-brand">
               KhanDoor Video Catalog
             </Link>
             <div className="collapse navbar-collapse">
@@ -32,7 +32,11 @@ class App extends Component {
                   </Link>
                 </li>
                 <li className="navbar-item">
-                  <Link to="/create" className="nav-link">
+                  <Link
+                    to="/create"
+                    className="nav-link"
+                    style={{ color: "orange" }}
+                  >
                     Create Video Lesson
                   </Link>
                 </li>
