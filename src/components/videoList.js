@@ -38,9 +38,9 @@ export class videoList extends Component {
   render() {
     return (
       <div>
-        <h3>Video List</h3>
+        <h3 className="vidList">Video List</h3>
         <table className="table table-striped" style={{ marginTop: 20 }}>
-          <thead>
+          <thead className="thead">
             <tr>
               <th>Description</th>
               <th>URL</th>
